@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lock_vault/main.dart';
+import 'package:lock_vault/view/widgets/custom_toast.dart';
 
 
 class LoginController extends GetxController {
@@ -23,7 +24,6 @@ class LoginController extends GetxController {
             .signInWithPassword(email: emailC.text, password: passwordC.text);
 
         isLoading.value = false;
-        Get.offAll(const BottomNav());
 
         return true;
       } catch (e) {

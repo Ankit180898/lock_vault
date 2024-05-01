@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 
 import 'routes/app_pages.dart';
 
-
 Future<void> main() async {
   await dotenv.dotenv.load(fileName: '.env');
   final supaUri = dotenv.dotenv.env['SUPABASE_URL']; //get env key
@@ -26,7 +25,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        title: 'LockVault',
         initialRoute: Routes.SPLASH,
         getPages: AppPages.routes,
         builder: (context, child) {

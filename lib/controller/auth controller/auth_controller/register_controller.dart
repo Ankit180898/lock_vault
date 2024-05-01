@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lock_vault/main.dart';
+import 'package:lock_vault/view/home/home_screen.dart';
+import 'package:lock_vault/view/widgets/custom_toast.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-import 'dart:io';
 
 
 class RegisterController extends GetxController {
@@ -52,17 +54,17 @@ class RegisterController extends GetxController {
           "balance": 0,
         });
 
-        Get.offAll(const BottomNav());
+        Get.offAll(const HomeScreen());
       } catch (e) {
         isLoading.value = false;
         emailC.clear();
         nameC.clear();
         passwordC.clear();
-        file.value = null;
         CustomToast.errorToast("Error", e.toString());
         debugPrint(e.toString());
       }
     } else {
+      
       CustomToast.errorToast("ERROR", "Email, password and name are required");
     }
   }

@@ -30,13 +30,12 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: width,
-      height: height,
-      child: InkWell(
+    return  InkWell(
         borderRadius: BorderRadius.circular(borderRadius),
         onTap: onPressed,
         child: Container(
+          height: height,
+          width: width,
           decoration: BoxDecoration(
               color: bgcolor,
               borderRadius: BorderRadius.circular(borderRadius),
@@ -74,7 +73,7 @@ class CustomButton extends StatelessWidget {
                   ),
                 ),
         ),
-      ),
+    
     );
   }
 }
