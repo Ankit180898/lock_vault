@@ -23,7 +23,7 @@ extension DurationExtension on int {
 }
 
 extension PaddingExtension on Widget {
-  Widget paddingAll(double padding) {
+  Widget padAll(double padding) {
     return Padding(padding: EdgeInsets.all(padding),
     
     child: this,);

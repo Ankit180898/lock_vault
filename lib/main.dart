@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'LockVault',
+        title: 'Lock Vault',
         initialRoute: Routes.SPLASH,
         getPages: AppPages.routes,
         builder: (context, child) {
