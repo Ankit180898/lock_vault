@@ -14,8 +14,16 @@ class AppColor {
       Color(0xffF0F4F7),
     ],
   );
-  static Color primary = const Color(0xFF7B88FC);
-  static Color primarySoft = const Color(0xFFFFECE8);
+  static LinearGradient cardGradient = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      primaryExtraSoft,
+      const Color(0xffF0F4F7),
+    ],
+  );
+  static Color primary = const Color(0xffF2167B);
+  static Color primarySoft = const Color(0xffF86668);
   static Color primaryExtraSoft = const Color(0xFFEFF3FC);
   static Color secondary = const Color(0xFF171F46);
   static Color secondarySoft = const Color(0xFF47495B);

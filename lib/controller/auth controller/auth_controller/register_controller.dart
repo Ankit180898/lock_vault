@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lock_vault/main.dart';
-import 'package:lock_vault/view/home/home_screen.dart';
+import 'package:lock_vault/routes/app_pages.dart';
 import 'package:lock_vault/view/widgets/custom_toast.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -51,10 +51,9 @@ class RegisterController extends GetxController {
           "name": nameC.text,
           "email": emailC.text,
           "created_at": DateTime.now().toIso8601String(),
-          "balance": 0,
         });
 
-        Get.offAll(const HomeScreen());
+        Get.offAllNamed(Routes.HOME);
       } catch (e) {
         isLoading.value = false;
         emailC.clear();

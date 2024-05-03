@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lock_vault/main.dart';
+import 'package:lock_vault/routes/app_pages.dart';
 import 'package:lock_vault/view/widgets/custom_toast.dart';
-
 
 class LoginController extends GetxController {
   RxBool isLoading = false.obs;
@@ -24,6 +24,7 @@ class LoginController extends GetxController {
             .signInWithPassword(email: emailC.text, password: passwordC.text);
 
         isLoading.value = false;
+        Get.offAllNamed(Routes.HOME);
 
         return true;
       } catch (e) {

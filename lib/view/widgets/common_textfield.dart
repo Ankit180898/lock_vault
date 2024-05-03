@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lock_vault/constants/app_color.dart';
+import 'package:lock_vault/utils/utils.dart';
 
 class CommonTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -21,8 +23,19 @@ class CommonTextField extends StatelessWidget {
     return TextField(
       controller: controller,
       decoration: InputDecoration(
-        labelText: labelText,
-        prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
+        filled: true,
+        hintText: labelText,
+        hintStyle: normalText(16, AppColor.secondaryExtraSoft),
+        fillColor: AppColor.white,
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16),
+            borderSide: BorderSide.none),
+        prefixIcon: prefixIcon != null
+            ? Icon(
+                prefixIcon,
+                color: AppColor.secondaryExtraSoft,
+              )
+            : null,
       ),
       obscureText: obscureText,
       keyboardType: keyboardType,

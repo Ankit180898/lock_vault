@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lock_vault/constants/app_color.dart';
@@ -6,7 +5,6 @@ import 'package:lock_vault/controller/auth%20controller/auth_controller/register
 import 'package:lock_vault/utils/size_helpers.dart';
 import 'package:lock_vault/utils/utils.dart';
 import 'package:lock_vault/view/widgets/custom_button.dart';
-
 
 import '../../routes/app_pages.dart';
 
@@ -59,13 +57,9 @@ class RegisterScreen extends StatelessWidget {
                 children: [
                   Container(
                     margin: const EdgeInsets.only(bottom: 24),
-                    child: const Text(
+                    child: Text(
                       'Create an account',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontFamily: 'poppins',
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: mediumTextStyle(24, AppColor.secondary),
                     ),
                   ),
                   verticalSpace(16),
@@ -80,27 +74,16 @@ class RegisterScreen extends StatelessWidget {
                           width: 1, color: AppColor.secondaryExtraSoft),
                     ),
                     child: TextField(
-                      style:
-                          const TextStyle(fontSize: 14, fontFamily: 'poppins'),
+                      style: normalText(16, AppColor.secondary),
                       maxLines: 1,
                       controller: controller.nameC,
                       decoration: InputDecoration(
-                        label: Text(
-                          "Name",
-                          style: TextStyle(
-                            color: AppColor.secondarySoft,
-                            fontSize: 14,
-                          ),
-                        ),
+                        label: Text("Name",
+                            style: normalText(14, AppColor.secondaryExtraSoft)),
                         floatingLabelBehavior: FloatingLabelBehavior.always,
                         border: InputBorder.none,
                         hintText: "John Doe",
-                        hintStyle: TextStyle(
-                          fontSize: 14,
-                          fontFamily: 'poppins',
-                          fontWeight: FontWeight.w500,
-                          color: AppColor.secondarySoft,
-                        ),
+                        hintStyle: normalText(16, AppColor.secondarySoft),
                       ),
                     ),
                   ),
@@ -116,27 +99,16 @@ class RegisterScreen extends StatelessWidget {
                           width: 1, color: AppColor.secondaryExtraSoft),
                     ),
                     child: TextField(
-                      style:
-                          const TextStyle(fontSize: 14, fontFamily: 'poppins'),
+                      style: normalText(16, AppColor.secondary),
                       maxLines: 1,
                       controller: controller.emailC,
                       decoration: InputDecoration(
-                        label: Text(
-                          "Email",
-                          style: TextStyle(
-                            color: AppColor.secondarySoft,
-                            fontSize: 14,
-                          ),
-                        ),
+                        label: Text("Email",
+                            style: normalText(16, AppColor.secondaryExtraSoft)),
                         floatingLabelBehavior: FloatingLabelBehavior.always,
                         border: InputBorder.none,
                         hintText: "youremail@email.com",
-                        hintStyle: TextStyle(
-                          fontSize: 14,
-                          fontFamily: 'poppins',
-                          fontWeight: FontWeight.w500,
-                          color: AppColor.secondarySoft,
-                        ),
+                        hintStyle: normalText(16, AppColor.secondarySoft),
                       ),
                     ),
                   ),
@@ -154,18 +126,15 @@ class RegisterScreen extends StatelessWidget {
                       ),
                       child: Obx(
                         () => TextField(
-                          style: const TextStyle(
-                              fontSize: 14, fontFamily: 'poppins'),
+                          style: normalText(16, AppColor.secondary),
                           maxLines: 1,
                           controller: controller.passwordC,
                           obscureText: controller.isHidden.value,
                           decoration: InputDecoration(
                             label: Text(
                               "Password",
-                              style: TextStyle(
-                                color: AppColor.secondarySoft,
-                                fontSize: 14,
-                              ),
+                              style:
+                                  normalText(14, AppColor.secondaryExtraSoft),
                             ),
                             floatingLabelBehavior: FloatingLabelBehavior.always,
                             border: InputBorder.none,
@@ -201,11 +170,13 @@ class RegisterScreen extends StatelessWidget {
                           controller.register();
                         }
                       },
-                      bgcolor: AppColor.primary,
+                      borderRadius: 24,
+                      bgcolor: AppColor.error,
+                      gradient: AppColor.primaryGradient,
                       height: displayHeight(context) * 0.08,
                       width: displayWidth(context),
-                      textSize: 16,
-                      textColor: Colors.white)),
+                      textSize: 14,
+                      textColor: AppColor.white)),
                 ],
               ),
             ),

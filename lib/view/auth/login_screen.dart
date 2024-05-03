@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lock_vault/constants/app_color.dart';
@@ -58,14 +57,8 @@ class LoginScreen extends StatelessWidget {
               children: [
                 Container(
                   margin: const EdgeInsets.only(bottom: 24),
-                  child: const Text(
-                    'Sign In',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontFamily: 'poppins',
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
+                  child: Text('Sign In',
+                      style: mediumTextStyle(24, AppColor.secondary)),
                 ),
                 verticalSpace(16),
                 Container(
@@ -79,27 +72,18 @@ class LoginScreen extends StatelessWidget {
                         width: 1, color: AppColor.secondaryExtraSoft),
                   ),
                   child: TextField(
-                    style: const TextStyle(fontSize: 14, fontFamily: 'poppins'),
+                    style: normalText(16, AppColor.secondary),
                     maxLines: 1,
                     controller: controller.emailC,
                     decoration: InputDecoration(
-                      label: Text(
-                        "Email",
-                        style: TextStyle(
-                          color: AppColor.secondarySoft,
-                          fontSize: 14,
+                        label: Text(
+                          "Email",
+                          style: normalText(14, AppColor.secondaryExtraSoft),
                         ),
-                      ),
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      border: InputBorder.none,
-                      hintText: "youremail@email.com",
-                      hintStyle: TextStyle(
-                        fontSize: 14,
-                        fontFamily: 'poppins',
-                        fontWeight: FontWeight.w500,
-                        color: AppColor.secondarySoft,
-                      ),
-                    ),
+                        floatingLabelBehavior: FloatingLabelBehavior.always,
+                        border: InputBorder.none,
+                        hintText: "youremail@email.com",
+                        hintStyle: normalText(16, AppColor.secondarySoft)),
                   ),
                 ),
                 verticalSpace(8),
@@ -115,18 +99,14 @@ class LoginScreen extends StatelessWidget {
                     ),
                     child: Obx(
                       () => TextField(
-                        style: const TextStyle(
-                            fontSize: 14, fontFamily: 'poppins'),
+                        style: normalText(16, AppColor.secondary),
                         maxLines: 1,
                         controller: controller.passwordC,
                         obscureText: controller.isHidden.value,
                         decoration: InputDecoration(
                           label: Text(
                             "Password",
-                            style: TextStyle(
-                              color: AppColor.secondarySoft,
-                              fontSize: 14,
-                            ),
+                            style: normalText(14, AppColor.secondary),
                           ),
                           floatingLabelBehavior: FloatingLabelBehavior.always,
                           border: InputBorder.none,
@@ -153,6 +133,8 @@ class LoginScreen extends StatelessWidget {
                 ),
                 verticalSpace(16),
                 Obx(() => CustomButton(
+                    gradient: AppColor.primaryGradient,
+                    borderRadius: 24,
                     text: controller.isLoading.isFalse ? "Login" : "Loading",
                     onPressed: () {
                       if (controller.isLoading.isFalse) {

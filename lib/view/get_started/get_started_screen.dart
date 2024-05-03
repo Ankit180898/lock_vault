@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lock_vault/constants/app_color.dart';
 import 'package:lock_vault/utils/size_helpers.dart';
