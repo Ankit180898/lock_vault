@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:lock_vault/constants/app_color.dart';
 import 'package:lock_vault/controller/home_controller.dart';
+import 'package:lock_vault/routes/app_pages.dart';
 import 'package:lock_vault/utils/size_helpers.dart';
 import 'package:lock_vault/utils/utils.dart';
 import 'package:lock_vault/view/home/components/main_content.dart';
 import 'package:lock_vault/view/home/components/top_contents.dart';
 import 'package:lock_vault/view/widgets/circular_progress/custom_circular_control.dart';
-import 'package:lock_vault/view/widgets/common_textfield.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -24,7 +23,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.toNamed(Routes.NEWVAULT);
+          },
           backgroundColor: AppColor.primarySoft,
           shape: const CircleBorder(eccentricity: 0.1),
           child: Icon(
@@ -62,8 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 verticalSpace(24),
                 //main details container
 
-                MainContent(),
-                
+                const MainContent(),
               ],
             ),
           ),

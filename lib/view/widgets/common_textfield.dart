@@ -6,6 +6,7 @@ class CommonTextField extends StatelessWidget {
   final TextEditingController controller;
   final String labelText;
   final bool obscureText;
+  final bool borderSide;
   final TextInputType keyboardType;
   final IconData? prefixIcon;
 
@@ -13,6 +14,7 @@ class CommonTextField extends StatelessWidget {
     super.key,
     required this.controller,
     required this.labelText,
+    this.borderSide = false,
     this.obscureText = false,
     this.keyboardType = TextInputType.text,
     this.prefixIcon,
@@ -29,7 +31,12 @@ class CommonTextField extends StatelessWidget {
         fillColor: AppColor.white,
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
-            borderSide: BorderSide.none),
+            borderSide: borderSide == false
+                ? BorderSide.none
+                : BorderSide(
+                    color: AppColor.secondaryExtraSoft,
+                    width: 1,
+                    style: BorderStyle.solid)),
         prefixIcon: prefixIcon != null
             ? Icon(
                 prefixIcon,

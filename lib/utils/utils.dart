@@ -84,3 +84,9 @@ TextStyle normalText(double size, Color color) => GoogleFonts.outfit(
       textStyle:
           TextStyle(color: color, fontSize: size, fontWeight: FontWeight.w400),
     );
+List<String> dropDownCategories = [
+  'Browser',
+  'Mobile App',
+  'Payment',
+  
+];

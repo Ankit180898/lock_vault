@@ -13,10 +13,12 @@ class SplashController extends GetxController {
     Timer(
         400.ms,
         () => supabaseC.auth.onAuthStateChange.listen((event) {
-              isAuthenticated.value = event.session!.isExpired;
-              if (isAuthenticated.value) {
+              isAuthenticated.value =
+                  supabaseC.auth.currentUser != null ? true : false;
+              if (isAuthenticated.value == false) {
                 // User is no longer authenticated, navigate to login or register page
-                Get.offAllNamed(Routes.GETSTARTED); // Replace with your login route
+                Get.offAllNamed(
+                    Routes.GETSTARTED); // Replace with your login route
               } else {
                 Get.offAllNamed(Routes.HOME);
               }
